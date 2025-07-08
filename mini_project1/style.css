@@ -1,0 +1,95 @@
+body {
+    background: url(../images/blank-blue.jpg);
+     background-repeat: no-repeat;
+     background-size: cover;
+     background-position: center;
+
+}
+.header{
+    display: flex;
+    justify-content: space-evenly;
+    margin: 0;padding: 0;
+}
+
+img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #f6810bec;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 8px;
+
+}
+
+p {
+    background-color: orangered;
+    color: white;
+    margin-top: 0px;
+    margin-bottom: 0;
+    padding: 8px 10px;
+    border: 2px solid darkorange;
+    border-radius: 30px;
+    text-align: center;
+    width: fit-content;
+    display: block;
+    margin-bottom: 20px;
+
+}
+
+table {
+    align-items: center;
+}
+
+.table1{
+    align-items: center;
+}
+marquee {
+    behavior: "scroll";
+    color: crimson;
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+h2 {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+    font-size: 40px;
+    color: rgba(22, 28, 131, 0.825);
+    margin-top: 0;
+    text-shadow: 0 0 10px rgba(22, 28, 131, 0.6),
+                 0 0 20px rgba(22, 28, 131, 0.4),
+                 0 0 30px rgba(22, 28, 131, 0.2);
+}
+
+h1 {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: brown;
+    font-size: 50px;
+    text-align: center;
+    margin-bottom: 10px;
+    margin-top: 0;
+
+}
+
+.friends {
+    behavior: "scroll";
+    color: crimson;
+    margin-bottom: 0;
+    margin-top: 0;
+    direction: "right";
+    font-family: 'Lucida Sans', 'Lucida Sans Regular',
+     'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+#prawn{
+    align-items: center;
+    
+}
+
+img:hover {
+    filter: brightness(1.2) drop-shadow(0 0 10px gold);
+    transform: scale(1.05);
+    transition: all 0.3s ease-in-out;
+}
+
