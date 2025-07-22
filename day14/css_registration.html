@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registration Form</title>
+  <style>
+    body {
+      background-color: #e0f0ff;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+      padding: 20px;
+    }
+
+    .container {
+      background-color: #ffffff;
+      border: 2px solid #007acc;
+      border-radius: 10px;
+      padding: 30px 40px;
+      max-width: 600px;
+      width: 100%;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+
+    h1 {
+      text-align: center;
+      color: #007acc;
+      margin-bottom: 10px;
+    }
+
+    p {
+      text-align: center;
+      font-size: 15px;
+      color: #333333;
+    }
+
+    hr {
+      margin: 10px 0 20px 0;
+    }
+
+    form label {
+      font-weight: 600;
+      display: block;
+      margin-top: 10px;
+      margin-bottom: 5px;
+      color: #333333;
+    }
+
+    input[type="text"],
+    input[type="tel"],
+    input[type="email"],
+    input[type="date"],
+    input[type="file"],
+    select,
+    textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid #007acc;
+      border-radius: 5px;
+      box-sizing: border-box;
+      font-size: 14px;
+    }
+
+    input[type="radio"] {
+      margin-right: 5px;
+    }
+
+    textarea {
+      resize: vertical;
+    }
+
+    input[type="submit"] {
+      background-color: #007acc;
+      color: white;
+      padding: 12px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      width: 100%;
+      font-size: 16px;
+      margin-top: 10px;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #005fa3;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>College Registration Form</h1>
+    <p>Please fill in the college application form below if you want to attend our <br> institution. Thank you!</p>
+    <hr>
+    <form action="../day14/sign.html">
+      <label for="name">First Name:</label>
+      <input type="text" id="name" name="First Name" maxlength="20" placeholder="First Name" autofocus required>
+
+      <label for="lastname">Last Name:</label>
+      <input type="text" id="lastname" name="Last Name" maxlength="10" placeholder="Last Name" required>
+
+      <label>Gender:</label>
+      <input type="radio" name="gender" required> Male
+      <input type="radio" name="gender" required> Female
+
+      <label>Date of Birth:</label>
+      <input type="date" required>
+
+      <label>Phone:</label>
+      <input type="text" name="country code" value="+91" maxlength="3">
+      <input type="tel" name="Phone" maxlength="10" placeholder="### ### ####" required>
+
+      <label>Home Address:</label>
+      <textarea cols="80" rows="4" placeholder="Address"></textarea>
+
+      <label>Email:</label>
+      <input type="email" name="email" placeholder="abc@gmail.com">
+
+      <label for="Course">Select Course:</label>
+      <select id="Course" name="Course" required>
+        <option value="">--Select Course--</option>
+        <option value="MPC">MPC</option>
+        <option value="MSCs">MSCS</option>
+        <option value="karnataka">MPCs</option>
+        <option value="tamil_nadu">B.Com</option>
+        <option value="maharashtra">BZC</option>
+        <option value="kerala">MCCs</option>
+        <option value="gujarat">AI</option>
+        <option value="rajasthan">Data Science</option>
+        <option value="west_bengal">Web Development</option>
+      </select>
+
+      <label>Upload Documents:</label>
+      <input type="file">
+
+      <input type="submit" value="Submit">
+    </form>
+  </div>
+</body>
+</html>
