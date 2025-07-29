@@ -1,5 +1,5 @@
 body {
-    background: url(../images/blank-blue.jpg);
+    background: url(./images/blank-blue.jpg);
      background-repeat: no-repeat;
      background-size: cover;
      background-position: center;
@@ -24,7 +24,7 @@ img {
 }
 
 p {
-    background-color: orangered;
+    background-color:#f6810bec;
     color: white;
     margin-top: 0px;
     margin-bottom: 0;
@@ -35,12 +35,13 @@ p {
     width: fit-content;
     display: block;
     margin-bottom: 20px;
+    border: 3px solid #e22c44ec;
 
 }
 
 table {
     align-items: center;
-}
+}l̥ōl̥ō
 
 .table1{
     align-items: center;
