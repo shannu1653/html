@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Bookmarks + IFrame Embeds (YouTube & Maps)</title>
+  <style>
+    /* Basic reset & fonts */
+    * { box-sizing: border-box; }
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      margin: 0;
+      line-height: 1.5;
+      scroll-behavior: smooth; /* smooth scroll for bookmarks */
+    }
+
+    /* Fixed header / navigation */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: #1e293b;
+      color: #fff;
+      padding: 10px 16px;
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav-links {
+      display: flex;
+      gap: 12px;
+    }
+    .nav-links a {
+      color: #fff;
+      text-decoration: none;
+      padding: 6px 10px;
+      border-radius: 6px;
+    }
+    .nav-links a:hover { background: rgba(255,255,255,0.08); }
+
+    /* Page container so content isn't hidden behind fixed header */
+    main { padding-top: 70px; }
+
+    /* Section styling */
+    section {
+      padding: 48px 20px;
+      max-width: 1000px;
+      margin: 0 auto 40px;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+    }
+    h2 { margin-top: 0; }
+
+    /* Responsive iframe wrapper (16:9) */
+    .iframe-container {
+      position: relative;
+      width: 100%;
+      padding-top: 56.25%; /* 16:9 aspect ratio */
+      margin: 16px 0;
+      overflow: hidden;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    }
+    .iframe-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    /* Smaller screens: stack nicely */
+    @media (max-width:600px) {
+      header { padding: 8px 10px; }
+      .nav-links a { padding: 6px 8px; font-size: 14px; }
+      section { padding: 28px 12px; margin: 0 12px 28px; }
+    }
+
+    /* Small footer / back to top */
+    .footer {
+      text-align: center;
+      padding: 24px 8px;
+      color: #444;
+    }
+    .btn {
+      display: inline-block;
+      background: #0369a1;
+      color: #fff;
+      text-decoration: none;
+      padding: 8px 12px;
+      border-radius: 6px;
+      margin-top: 8px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Fixed Header with Bookmark Links -->
+  <header>
+    <div style="font-weight:700">My Bookmark & Iframe Demo</div>
+    <nav class="nav-links" aria-label="Main navigation">
+      <!-- Bookmark links use #id to jump to sections -->
+      <a href="#home">Home</a>
+      <a href="#videos">Videos</a>
+      <a href="#map">Map</a>
+      <a href="#about">About</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Home Section -->
+    <section id="home" role="region" aria-labelledby="home-heading">
+      <h2 id="home-heading">Home</h2>
+      <p>
+        This page shows how to use <strong>bookmarks (anchor links)</strong> to jump to sections and how to embed external content with
+        <code>&lt;iframe&gt;</code>. Scroll or use the top navigation to jump to the Videos or Map sections.
+      </p>
+      <p>
+        Tip: Replace the YouTube video IDs or the Google Maps query in the code below to embed the content you want.
+      </p>
+      <p><a class="btn" href="#videos">Go to Videos</a> <a class="btn" href="#map" style="background:#059669">Go to Map</a></p>
+    </section>
+
+    <!-- Videos Section -->
+    <section id="videos" role="region" aria-labelledby="videos-heading">
+      <h2 id="videos-heading">Embedded YouTube Videos</h2>
+      <p>Below are two example YouTube embeds. They are responsive and allow fullscreen.</p>
+
+      <!-- Example Video 1 -->
+      <div>
+        <h3>Video 1 — Example</h3>
+        <div class="iframe-container">
+          <!-- Replace VIDEO_ID_1 with any YouTube video ID -->
+          <iframe
+            src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+            title="YouTube video player"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+          </iframe>
+        </div>
+        <p>
+          <small>Direct YouTube link:
+            <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" rel="noopener">Open on YouTube</a>
+          </small>
+        </p>
+      </div>
+
+      <!-- Example Video 2 -->
+      <div>
+        <h3>Video 2 — Example</h3>
+        <div class="iframe-container">
+          <!-- Replace VIDEO_ID_2 with any YouTube video ID -->
+          <iframe
+            src="https://www.youtube.com/embed/3JZ_D3ELwOQ"
+            title="YouTube video player 2"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+          </iframe>
+        </div>
+        <p>
+          <small>Direct YouTube link:
+            <a href="https://www.youtube.com/watch?v=3JZ_D3ELwOQ" target="_blank" rel="noopener">Open on YouTube</a>
+          </small>
+        </p>
+      </div>
+    </section>
+
+    <!-- Map Section -->
+    <section id="map" role="region" aria-labelledby="map-heading">
+      <h2 id="map-heading">Embedded Google Map</h2>
+      <p>
+        This is a simple Google Maps embed. It uses a query (Taj Mahal). Replace the query string after <code>?q=</code> with any place or coordinates.
+      </p>
+
+      <div class="iframe-container" style="padding-top:60%;">
+        <!-- Simple, generic Google Maps embed using a place query.
+             You can replace "Taj+Mahal" with "Eiffel+Tower" or coordinates like "28.6139,77.2090". -->
+        <iframe
+          src="https://www.google.com/maps?q=Taj+Mahal&output=embed"
+          title="Map showing Taj Mahal"
+          allowfullscreen
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+
+      <p>
+        <small>Open full map:
+          <a href="https://www.google.com/maps?q=Taj+Mahal" target="_blank" rel="noopener">Open in Google Maps</a>
+        </small>
+      </p>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" role="region" aria-labelledby="about-heading">
+      <h2 id="about-heading">About This Demo</h2>
+      <p>
+        This page demonstrates:
+        <ul>
+          <li>Bookmarking using anchor links like <code>#videos</code> and <code>#map</code>.</li>
+          <li>Embedding external content using <code>&lt;iframe&gt;</code> for YouTube and Google Maps.</li>
+          <li>Responsive iframes using CSS (maintains 16:9 ratio).</li>
+        </ul>
+      </p>
+
+      <p>
+        Replace the YouTube video IDs (after <code>/embed/</code>) and the map query (after <code>?q=</code>) to show your own content.
+      </p>
+
+      <p class="footer">
+        <a href="#home" class="btn">Back to Top</a>
+      </p>
+    </section>
+  </main>
+
+  <footer style="text-align:center;padding:12px 6px;color:#666;">
+    © Example — Bookmarks & Iframe Demo
+  </footer>
+</body>
+</html>
